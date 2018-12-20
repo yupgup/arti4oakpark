@@ -17,6 +17,7 @@
 html {
   box-sizing: border-box;
   font-size: 16px;
+  color: #191919;
 }
 
 *, *:before, *:after {
@@ -45,11 +46,26 @@ body {
 }
 
 .block {
-  padding: var(--gutters);
+  padding: calc(var(--space) * 1.5) var(--gutters);
 }
 
 h1 {
   display: none;
+}
+
+.has-spark {
+  position: relative;
+}
+
+.has-spark:before {
+  position: relative;
+  top: -.35em;
+  display: inline-block;
+  background-image: url(spark.svg);
+  background-repeat: no-repeat;
+  height: 1em;
+  width: 1em;
+  content: "";
 }
 
 h2, h3 {
@@ -59,6 +75,10 @@ h2, h3 {
 
 h3 {
   font-size: 1.4rem;
+}
+
+.intro {
+  font-size: 1.2rem;
 }
 
 .site-header {
@@ -123,6 +143,16 @@ p:last-child {
   margin-bottom: 0;
 }
 
+.about {
+  margin-bottom: 60px;
+}
+
+.equity-img {
+  display: block;
+  margin: var(--space) auto;
+  max-width: 80%;
+}
+
 .issue {
   margin-bottom: var(--space);
   padding-bottom: var(--space);
@@ -130,14 +160,25 @@ p:last-child {
 }
 
 .endorsements {
-  display: none;
+  background: #F9F9F9;
+}
+
+.endorsements ul {
+  margin: 1.5rem;
+}
+
+.endorsements li {
+  list-style: disc;
+  font-size: 1.1rem;
+}
+
+.site-footer {
+  background: var(--brandColor2);
+  text-align: center;
+  color: #FFF;
 }
 
 @media (min-width: 720px) {
-  :root {
-
-  }
-
   body {
     font-size: 18px;
   }
@@ -154,6 +195,7 @@ p:last-child {
 
   .headshot {
     grid-area: headshot;
+    height: auto;
   }
 
   .site-header {
@@ -165,7 +207,7 @@ p:last-child {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 40px;
+    padding: 40px var(--gutters) 0;
   }
 
   .site-logo {
@@ -179,13 +221,13 @@ p:last-child {
 
   .site-nav {
     grid-area: nav;
-    margin-top: 60px;
+    margin-top: 30px;
     width: 100%;
   }
 
   .site-nav a {
-    font-size: 1.2rem;
-    padding: 16px 8px;
+    font-size: 1rem;
+    padding: 16px 10px;
     border-radius: 6px;
   }
 
@@ -222,5 +264,20 @@ p:last-child {
   .block {
     margin: 0 auto;
     max-width: var(--maxWidth);
+  }
+}
+
+@media (min-width: 920px) {
+  .site-header-side {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .site-nav {
+    margin-top: 60px;
+  }
+
+  .site-nav a {
+    font-size: 1.3rem;
   }
 }
